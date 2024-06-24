@@ -59,6 +59,75 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
+
+# Profile Project
+
+This is a simple Laravel project that demonstrates a basic route and controller setup. The project defines a `/profile/{id}` route which connects to the `ProfileController` and returns a JSON response with profile information along with setting a cookie.
+
+## Features
+
+- **Route**: A `GET` route `/profile/{id}` that accepts a required parameter `id`.
+- **Controller**: The `ProfileController` with a single method `index` that handles the logic.
+- **Response**: Returns a JSON response with the `id`, `name`, and `age`.
+- **Cookie**: Sets a cookie named `access_token` with specific attributes.
+
+## Installation
+
+1. **Clone the repository:**
+    ```sh
+    git clone <your-repo-url>
+    ```
+
+2. **Navigate to the project directory:**
+    ```sh
+    cd profile-project
+    ```
+
+3. **Install the dependencies:**
+    ```sh
+    composer install
+    ```
+
+4. **Copy the `.env.example` file to `.env` and configure your environment variables:**
+    ```sh
+    cp .env.example .env
+    ```
+
+5. **Generate the application key:**
+    ```sh
+    php artisan key:generate
+    ```
+
+6. **Serve the application:**
+    ```sh
+    php artisan serve
+    ```
+
+7. **Access the application in your browser:**
+    Open your browser and navigate to `http://localhost:8000/profile/1` (or any other `id`).
+
+## Usage
+
+When you visit `http://localhost:8000/profile/{id}` in your browser, the application will:
+
+1. Capture the `id` parameter from the URL.
+2. Pass the `id` to the `ProfileController@index` method.
+3. Create a response with a JSON object containing the `id`, `name`, and `age`.
+4. Set a cookie named `access_token` with a value of `123-XYZ`.
+
+### Example Response
+
+```json
+{
+    "id": "1",
+    "name": "Donal Trump",
+    "age": "75"
+}
+
+
+
+
+
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
